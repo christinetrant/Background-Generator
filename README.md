@@ -1,6 +1,6 @@
 # Background Generator
 
-A background generator using HTML, CSS & javascript, coded along with Udemy Z2M course
+A background generator using HTML, CSS & javascript, choose between two or three colors and radial or linear gradients
 
 [Demo][1]
 

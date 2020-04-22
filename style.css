@@ -1,81 +1,39 @@
 body {
-	font: 'Raleway', sans-serif;
-    color: rgba(0,0,0,.5);
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: .5em;
-    top: 15%;
-    /* adds the first color towards right with starting color red, end color yellow */
-	background: linear-gradient(to right, #F10A14 , #CB14BC;) /* Standard syntax */
+	/*background-image: radial-gradient(#ba5370, #f4e2d8);*/
+	/*background-image: linear-gradient(to right, #43cea2, #185a9d);*/
+	text-align: center;
+	padding: 20px;
+	margin: 0 auto;
+	font-family: 'PT Mono', monospace;
+	font-size: 1.25em;
+	color: #505050;
 }
-
-h1 {
-    font: 600 3.5em 'Raleway', sans-serif;
-    color: rgba(0,0,0,.5);
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: .5em;
-    width: 100%;
+.wrapper {
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	padding: 20px;
+	margin: 5% 10vw;
 }
-
-h3 {
-	font: 900 1em 'Raleway', sans-serif;
-    color: rgba(0,0,0,.5);
-    text-align: center;
-    text-transform: none;
-    letter-spacing: 0.01em;
-
+.color1, .color2, .color1a, .color2a, .color3a {
+	width: 100px;
+	height: 100px;
+	margin: 10px 25px;
+	background: #f1f1f1;
+	border: 1px solid #f1f1f1;
+	box-shadow: 10px 10px 8px #888; 
 }
-
-input {
-    border-radius: 100%;
-    background: none;
-    border: none;
-    width: 4rem;
-    height: 4rem;
-    margin: 1rem;
-    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
-    animation: buttonPulse 2s ease infinite;
+.buttons { margin-top: 20px; }
+.btn {
+	border-radius: 10px;
+	border: none;
+	font-weight: 700;
+	background-color: #e7e7e7;
+	padding: 10px 20px;
+	margin: 10px;
+	box-shadow: 5px 5px 8px #888;
 }
-
-input::-webkit-color-swatch {
-  border: none;
-  border-radius: 100%;
-  padding: 0px;
+.btn:hover, .btn:focus, .btn:active, .active  {
+	background-color: #e7e7e7;
+	box-shadow: inset 2px 2px 8px #888;
 }
-
-input::-webkit-color-swatch-wrapper {
-  border: none;
-  border-radius: 100%;
-  padding: 0;
-}
-
-
-button {
-    margin: 30px 0;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 1em;
-    font-family: 'Exo', sans-serif;
-    border: none;
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
-    color: rgba(255,255,255,1);
-    background: rgba(0,0,0,0.5);
-    animation: buttonPulse 2s ease infinite;
-    transition: color 0.75s ease;
-}
-
-button:hover {
-    color: rgba(255,164,24);
-}
-
-
-@keyframes buttonPulse {
-  0% {
-    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.25);
-  }
-
-  100% {
-    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-  }
-}
+.hidden { display: none; }

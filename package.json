@@ -4,7 +4,7 @@
   "description": "Background Generator - choose two or three colours and linear gradient or radial gradient",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "live-server"
   },
   "repository": {
     "type": "git",

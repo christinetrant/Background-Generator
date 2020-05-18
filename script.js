@@ -5,41 +5,41 @@
 // 3. BONUS: Add a random button which generates two random numbers for the colour inputs.
 
 // DOM Strings
-var body = document.querySelector('body');
-var color1 = document.querySelector('.color1');
-var color2 = document.querySelector('.color2');
+const body = document.querySelector('body');
+const color1 = document.querySelector('.color1');
+const color2 = document.querySelector('.color2');
 
-var color1a = document.querySelector('.color1a');
-var color2a = document.querySelector('.color2a');
-var color3a = document.querySelector('.color3a');
+const color1a = document.querySelector('.color1a');
+const color2a = document.querySelector('.color2a');
+const color3a = document.querySelector('.color3a');
 
-var h3Title = document.getElementsByClassName('type')[0];
-var h3Colors = document.getElementsByClassName('output')[0];
-var button = document.getElementsByClassName('btn');
+const h3Title = document.getElementsByClassName('type')[0];
+const h3Colors = document.getElementsByClassName('output')[0];
+const button = document.getElementsByClassName('btn');
 
-var twoColorDiv = document.getElementById('twoColorInput');
-var threeColorDiv = document.getElementById('threeColorInput');
+const twoColorDiv = document.getElementById('twoColorInput');
+const threeColorDiv = document.getElementById('threeColorInput');
 
-var radialBtn = document.getElementById('radialBtn');
-var linearBtn = document.getElementById('linearBtn');
-var twoColorBtn = document.getElementById('twoColorBtn');
-var threeColorBtn = document.getElementById('threeColorBtn');
-var randomBtn = document.getElementById('randomBtn');
+const radialBtn = document.getElementById('radialBtn');
+const linearBtn = document.getElementById('linearBtn');
+const twoColorBtn = document.getElementById('twoColorBtn');
+const threeColorBtn = document.getElementById('threeColorBtn');
+const randomBtn = document.getElementById('randomBtn');
 
 // If linear button is active 
-function linearBtnActive() {
+const linearBtnActive = () => {
 	linearBtn.classList.add('active');
 	radialBtn.classList.remove('active');
 	h3Title.textContent = "Linear Gradient: ";
 }
 // If radial button is active
-function radialBtnActive() {
+const radialBtnActive = () => {
 	radialBtn.classList.add('active');
 	linearBtn.classList.remove('active');
 	h3Title.textContent = "Radial Gradient: ";
 }
 // If two color button is active
-function twoBtnActive() {
+const twoBtnActive = () => {
 	twoColorBtn.classList.add('active');
 	threeColorBtn.classList.remove('active');
 	// Hide the three color input div and show the two color input
@@ -47,7 +47,7 @@ function twoBtnActive() {
 	threeColorDiv.classList.add('hidden');
 }
 // If three color button is active
-function threeBtnActive() {
+const threeBtnActive = () => {
 	threeColorBtn.classList.add('active');
 	twoColorBtn.classList.remove('active');
 	// Hide the two color input div and show the three color input
@@ -56,54 +56,54 @@ function threeBtnActive() {
 }
 
 // If Linear & Two Color Button Selected
-function linearTwo() {
+const linearTwo = () => {
 	// Change the background to have new colors
-	body.style.backgroundImage = "linear-gradient(to right, " + color1.value +", " +color2.value +")";
+	body.style.backgroundImage = `linear-gradient(to right, ${color1.value}, ${color2.value})`;
 	// Change the classes so the linear button has active class
 	linearBtnActive();
 	// Change the classes so the two color button has active class
 	twoBtnActive();
 	// Display color values in h3 tag
-	h3Colors.textContent = color1.value + "   ➡   " + color2.value;
+	h3Colors.textContent = `${color1.value}   ➡   ${color2.value}`;
 }
 
 // If Linear & Three Color Button Selected
-function linearThree() {
+const linearThree = () => {
 	// Change the background to have new colors
-	body.style.backgroundImage = "linear-gradient(to right, " + color1a.value +", " +color2a.value +", " + color3a.value + ")";
+	body.style.backgroundImage = `linear-gradient(to right, ${color1a.value}, ${color2a.value}, ${color3a.value})`;
 	// Change the classes so the linear button has active class
 	linearBtnActive();
 	// Change the classes so the three color button has active class
 	threeBtnActive();
 	// Display color values in h3 tag
-	h3Colors.textContent = color1a.value + "   ➡   " + color2a.value + "   ➡   " + color3a.value;
+	h3Colors.textContent = `${color1a.value}   ➡   ${color2a.value}   ➡   ${color3a.value}`;
 }
 
 // If Radial & Two Color Button Selected
-function radialTwo() {
+const radialTwo = () => {
 	// Change the background to have new colors
-	body.style.backgroundImage = "radial-gradient(" + color1.value +", " + color2.value + ")";	
+	body.style.backgroundImage = `radial-gradient(${color1.value}, ${color2.value})`;	
 	// Change the classes so the radial button has active class
 	radialBtnActive();
 	// Change the classes so the two color button has active class
 	twoBtnActive();
 	// Display color values in h3 tag
-	h3Colors.textContent = color1.value + "   ➡   " + color2.value;
+	h3Colors.textContent = `${color1.value}   ➡   ${color2.value}`;
 }
 
 // If Radial & Three Color Button Selected
-function radialThree() {
+const radialThree = () => {
 	// Change the background to have new colors
-	body.style.backgroundImage = "radial-gradient(" + color1a.value +", " + color2a.value +", " + color3a.value + ")";	
+	body.style.backgroundImage = `radial-gradient(${color1a.value}, ${color2a.value}, ${color3a.value})`;	
 	// Change the classes so the radial button has active class
 	radialBtnActive();
 	// Change the classes so the three color button has active class
 	threeBtnActive();
 	// Display color values in h3 tag
-	h3Colors.textContent = color1a.value + "   ➡   " + color2a.value+ "   ➡   " + color3a.value;
+	h3Colors.textContent = `${color1a.value}   ➡   ${color2a.value}   ➡   ${color3a.value}`;
 }
 // If Two Color Button Selected
-function two() {
+const two = () => {
 	// If the linear button is active we want the output to be linear gradient
 	if(linearBtn.classList.contains('active')) {
 			linearTwo();
@@ -112,7 +112,7 @@ function two() {
 	}	
 }
 // If Three Color Button Selected
-function three() {
+const three = () => {
 	if(linearBtn.classList.contains('active')) {
 			linearThree();
 	} else if(radialBtn.classList.contains('active')) {
@@ -120,7 +120,7 @@ function three() {
 	}	
 }
 // If Linear Button Selected
-function linear() {
+const linear = () => {
 	// If the linear button is active we want the output to be linear gradient
 	if(twoColorBtn.classList.contains('active')) {
 			linearTwo();
@@ -129,7 +129,7 @@ function linear() {
 	}
 }
 // If Radial Button Selected
-function radial() {
+const radial = () => {
 	// otherwise we'd like it to be a radial gradient 
 	if(twoColorBtn.classList.contains('active')) {
 			radialTwo();
@@ -138,26 +138,26 @@ function radial() {
 	}	
 }
 // When the color is changed through the input element
-function colorInput() {
+const colorInput = () => {
 	// If the linear button is active we want the output to be linear gradient
 	if(linearBtn.classList.contains('active') && twoColorBtn.classList.contains('active')) {
 			linearTwo();
-		console.log("input function - 2 button linear");
+		// console.log("input function - 2 button linear");
 	} else if(linearBtn.classList.contains('active') && threeColorBtn.classList.contains('active')) {
 		linearThree();
-		console.log("input function - 3 button linear");
+		// console.log("input function - 3 button linear");
 	// otherwise we'd like it to be a radial gradient 
 	} else if(radialBtn.classList.contains('active') && twoColorBtn.classList.contains('active')) {
 			radialTwo();
-			console.log("input function - 2 button radial");
+			// console.log("input function - 2 button radial");
 	} else if(radialBtn.classList.contains('active') && threeColorBtn.classList.contains('active')) {
 			radialThree();
-			console.log("input function - 3 button radial");
+			// console.log("input function - 3 button radial");
 	}	
 }
 
 // Generate a random hex code for rnadom color function - Found on https://dev.to/thecodepixi/what-the-hex-how-to-generate-random-hex-color-codes-in-javascript-21n
-function generateHexCode(){
+const generateHexCode = () => {
   let randomHexCode = "#" 
   while( randomHexCode.length < 7 ) { 
      randomHexCode += (Math.floor(Math.random() * 15).toString(16) )
@@ -166,7 +166,7 @@ function generateHexCode(){
 }
 
 // Random Button Function
-function random() {
+const random = () => {
 	let randomColor1 = generateHexCode(); 
 	let randomColor3 = generateHexCode(); 
 	let randomColor2 = generateHexCode(); 
@@ -174,26 +174,26 @@ function random() {
 	// If the linear button is active we want the output to be linear gradient
 	if(linearBtn.classList.contains('active') && twoColorBtn.classList.contains('active')) {
 		// Change the background to have new colors
-		body.style.backgroundImage = "linear-gradient(to right, " + randomColor1 +", " +randomColor2 +")";
+		body.style.backgroundImage = `linear-gradient(to right, ${randomColor1}, ${randomColor2})`;
 		// Change the classes so the linear button has active class
 		linearBtnActive();
 		// Change the classes so the two color button has active class
 		twoBtnActive();
 		// Display color values in h3 tag
-		h3Colors.textContent = randomColor1 + "   ➡   " + randomColor2;
+		h3Colors.textContent = `${randomColor1}   ➡   ${randomColor2}`;
 
 		color1.value = randomColor1;
 		color2.value = randomColor2;
 		// console.log("RANDOM function - 2 button linear", randomColor1, randomColor2);
 	} else if(linearBtn.classList.contains('active') && threeColorBtn.classList.contains('active')) {
 		// Change the background to have new colors
-		body.style.backgroundImage = "linear-gradient(to right, " + randomColor1 +", " + randomColor2 +", " + randomColor3 + ")";
+		body.style.backgroundImage = `linear-gradient(to right, ${randomColor1}, ${randomColor2}, ${randomColor3})`;
 		// Change the classes so the linear button has active class
 		linearBtnActive();
 		// Change the classes so the three color button has active class
 		threeBtnActive();
 		// Display color values in h3 tag
-		h3Colors.textContent = randomColor1 + "   ➡   " + randomColor2 + "   ➡   " + randomColor3;
+		h3Colors.textContent = `${randomColor1}   ➡   ${randomColor2}   ➡   ${randomColor3}`;
 
 		color1a.value = randomColor1;
 		color2a.value = randomColor2;
@@ -202,26 +202,26 @@ function random() {
 	// otherwise we'd like it to be a radial gradient 
 	} else if(radialBtn.classList.contains('active') && twoColorBtn.classList.contains('active')) {
 		// Change the background to have new colors
-		body.style.backgroundImage = "radial-gradient(" + randomColor1 +", " + randomColor2 + ")";	
+		body.style.backgroundImage = `radial-gradient(${randomColor1}, ${randomColor2})`;	
 		// Change the classes so the radial button has active class
 		radialBtnActive();
 		// Change the classes so the two color button has active class
 		twoBtnActive();
 		// Display color values in h3 tag
-		h3Colors.textContent = "" + randomColor1 + "   ➡   " + randomColor2;
+		h3Colors.textContent = `${randomColor1}   ➡   ${randomColor2}`;
 
 		color1.value = randomColor1;
 		color2.value = randomColor2;
 		// console.log("RANDOM function - 2 button radial", randomColor1, randomColor2);
 	} else if(radialBtn.classList.contains('active') && threeColorBtn.classList.contains('active')) {
 		// Change the background to have new colors
-		body.style.backgroundImage = "radial-gradient(" + randomColor1 +", " + randomColor2 +", " + randomColor3 + ")";	
+		body.style.backgroundImage = `radial-gradient(${randomColor1}, ${randomColor2}, ${randomColor3})`;	
 		// Change the classes so the radial button has active class
 		radialBtnActive();
 		// Change the classes so the three color button has active class
 		threeBtnActive();
 		// Display color values in h3 tag
-		h3Colors.textContent = randomColor1 + "   ➡   " + randomColor2 + "   ➡   " + randomColor3;
+		h3Colors.textContent = `${randomColor1}   ➡   ${randomColor2}   ➡   ${randomColor3}`;
 
 		color1a.value = randomColor1;
 		color2a.value = randomColor2;
@@ -234,11 +234,11 @@ function random() {
 
 
 // Hover over buttons
-function hover(event) {
-	var linearTwoBg = "linear-gradient(to right, " + color1.value +", " +color2.value +")";
-	var linearThreeBg = "linear-gradient(to right, " + color1a.value +", " +color2a.value +", " +color3a.value +")";
-	var radialTwoBg = "radial-gradient(" + color1.value +", " +color2.value +")";
-	var radialThreeBg = "radial-gradient(" + color1a.value +", " +color2a.value +", " +color3a.value +")";
+const hover = (event) => {
+	let linearTwoBg = `linear-gradient(to right, ${color1.value}, ${color2.value})`;
+	let linearThreeBg = `linear-gradient(to right, ${color1a.value}, ${color2a.value}, ${color3a.value})`;
+	let radialTwoBg = `radial-gradient(${color1.value}, ${color2.value})`;
+	let radialThreeBg = `radial-gradient(${color1a.value}, ${color2a.value}, ${color3a.value})`;
 
 	if(linearBtn.classList.contains('active') && twoColorBtn.classList.contains('active')) {
 		event.target.style.backgroundImage = linearTwoBg;
@@ -259,7 +259,7 @@ function hover(event) {
 		threeColorBtn.style.backgroundImage= "none";
 	}	
 }
-function nohover(event) {
+const nohover = (event) => {
 	event.target.style.backgroundImage = "none"
 }
 

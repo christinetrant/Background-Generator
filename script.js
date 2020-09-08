@@ -178,7 +178,7 @@ const colorInput = () => {
   }
 };
 
-// Generate a random hex code for rnadom color function - Found on https://dev.to/thecodepixi/what-the-hex-how-to-generate-random-hex-color-codes-in-javascript-21n
+// Generate a random hex code for random color function - Found on https://dev.to/thecodepixi/what-the-hex-how-to-generate-random-hex-color-codes-in-javascript-21n
 const generateHexCode = () => {
   let randomHexCode = "#";
   while (randomHexCode.length < 7) {
